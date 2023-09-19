@@ -8,6 +8,7 @@ export default function ContactList (props:any) {
     const [contactList, setContactList] = useState(([]));
 
 
+    // const item:any = JSON.parse(localStorage.getItem(`contacts`));
 
 
     const handleDeleteContact = (index:number) => {

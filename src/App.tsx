@@ -23,16 +23,16 @@ function App() {
  const [favoriteContacts, setFavoriteContacts] = useState<Contact[]>([]);
  const [showFavorites, setShowFavorites] = useState(false);
  const [darkMode, setDarkMode] = useState(false);
- const [favoriteContactsCount, setFavoriteContactsCount] = useState<number>(0);
+//  const [favoriteContactsCount, setFavoriteContactsCount] = useState<number>(0);
 
 
  useEffect(() => {
   console.log('Updated favoriteContacts:', favoriteContacts);
 }, [favoriteContacts]);
 
-useEffect(() => {
-  setFavoriteContactsCount(favoriteContacts.length);
-}, [favoriteContacts]);
+// useEffect(() => {
+//   setFavoriteContactsCount(favoriteContacts.length);
+// }, [favoriteContacts]);
 
 
 const {isDarkMode, setIsDarkMode} = useDarkMode(); 
@@ -43,6 +43,8 @@ const modeClass = isDarkMode ? 'dark-mode' : 'light-mode';
 
  const handleAddContact = (newContact:any) => {
   setContacts([...contacts, newContact]);
+  localStorage.removeItem(`contacts`)
+  localStorage.setItem(`contacts`, JSON.stringify(newContact))
   
  }
 
@@ -103,6 +105,7 @@ const addToFavorites = (contactToAdd:Contact) => {
   const updatedContact = { ...contactToAdd, isFavorite: true };
   setFavoriteContacts((prevFavorites)=>[...prevFavorites, updatedContact]);
   console.log('Updated favoriteContacts:', favoriteContacts);
+  
 };
 
 const removeFromFavorites = (contactToRemove:Contact) => {
@@ -138,7 +141,7 @@ const removeFromFavorites = (contactToRemove:Contact) => {
     <div className="content-container">
     <AddContact onAddContact={handleAddContact} />
     <SearchBar onSearch={handleSearch} />
-    <button className="show-favorites" onClick={() =>setShowFavorites(!showFavorites)}>{showFavorites ? `Hide Favorite Contacts (${favoriteContactsCount})` : `Show Favorite Contacts (${favoriteContactsCount})`}</button>
+    <button className="show-favorites" onClick={() =>setShowFavorites(!showFavorites)}>{showFavorites ? `Hide Favorite Contacts (${favoriteContacts.length})` : `Show Favorite Contacts (${favoriteContacts.length})`}</button>
     {showFavorites && <FavoriteContacts favoriteContacts={favoriteContacts} onToggleFavorite={handleToggleFavorite} onRemoveFromFavorite={removeFromFavorites} remove={removeFromFavorites}/>}
     <div className="edit-form-container">
     {isEditing && (
