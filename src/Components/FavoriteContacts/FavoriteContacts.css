@@ -1,0 +1,24 @@
+.favorite-contact-container {
+    display:flex;
+    justify-items: center;
+    gap:2rem;
+    
+   
+  
+}
+
+.fav-item {
+    display:flex;
+    gap:2rem;
+    margin-top:1rem;
+
+}
+
+span {
+    font-weight:bold;
+}
+
+.fav-contacts-h1 {
+    font-size: 1.2rem;
+}
+

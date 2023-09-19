@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+  height:100vh;
+}
+
+* {
+  margin:0;
+  padding:0;
+}
+
+.content-container {
+  margin-top: 2rem;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  
+ 
+}
+
+.show-favorites {
+  margin-top:2rem;
+  margin-bottom: 2rem;
+  padding:0.5rem 2rem;
+  /* background-color:darkred; */
+}
+
+.dark-mode .show-favorites {
+  background-color: royalblue;
+}
+
+.dark-mode {
+  background-color: #333333;
+  color: white;
+ 
+}
+
+.toggle-dark-mode {
+  background-color: black;
+}
+
+.dark-mode input {
+  background-color: #f0f0f0b6; /* Light gray background color */
+  color: #000; /* Black text color for contrast */
+}
+
+.dark-mode .toggle-dark-mode {
+  background-color:lightgray;
+  color:black;
+}

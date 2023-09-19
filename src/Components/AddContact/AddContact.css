@@ -1,0 +1,49 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+input {
+  padding: 0.8rem;
+  margin-bottom: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.1s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.add-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode .add-btn {
+  background-color: royalblue;
+}
+
+.add-btn:hover {
+  background-color: #0056b3; /* Change the background color on hover */
+  transform: scale(1.05);
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 1rem;
+}
